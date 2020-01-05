@@ -2,7 +2,7 @@
   @author pjw vim@kakao.com
   @since 20200106
   
-  데이터베이스의 테이블 정의 등.. 관련 설정 파일
+  데이터베이스 접속 정보 설정
  */
 const envs = {
   dev: {
