@@ -1,3 +1,9 @@
+/*
+  @author pjw vim@kakao.com
+  @since 20200106
+  
+  데이터베이스의 테이블 정의 등.. 관련 설정 파일
+ */
 const envs = {
   dev: {
     mysql: {

@@ -1,3 +1,9 @@
+/*
+  @author pjw vim@kakao.com
+  @since 20200106
+  
+  데이터베이스의 테이블 정의 등.. 관련 설정 파일
+ */
 const Sequelize = require('sequelize');
 
 /* 데이터베이스 설정정보를 정의한 파일 */
