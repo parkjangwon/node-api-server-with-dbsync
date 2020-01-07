@@ -5,7 +5,7 @@
   User API의 실제 로직 작성
  */
 
-// DB 연동
+// 데이터베이스 커넥션 객체 정의
 const models = require('../../modules/db/models');
 
 // user 객체 배열을 리턴 하는 api
