@@ -8,7 +8,7 @@
 // 데이터베이스 커넥션 객체 정의
 const models = require('../../modules/db/models');
 
-// todo 객체 배열을 리턴 하는 api
+// 전체 todo 객체 배열을 리턴 하는 api
 exports.index = (req, res) => {
   models.Todo.findAll().then(todos => {
     return res.json(todos);
@@ -32,6 +32,15 @@ exports.show = (req, res) => {
     }
 
     return res.json(todo);
+  });
+};
+
+// 전체 todo를 삭제하는 api
+exports.destroyAll = (req, res) => {
+  models.Todo.destroy({
+    where: {}
+  }).then(() => {
+    return res.status(201).send();
   });
 };
 
@@ -75,7 +84,7 @@ exports.update = (req, res) => {
     return res.status(400).json({ error: 'Incorrect id' });
   }
 
-  const completed = req.body.completed || -1;
+  const completed = req.body.completed;
 
   if (completed < 0 || completed > 1) {
     return res.status(400).json({ error: 'Incorrect completed' });
