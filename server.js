@@ -9,6 +9,8 @@
  */
 const express = require('express');
 
+const cors = require('cors');
+
 /* http 요청 body에 접근 가능하도록 bodyParser를 추가한다. */
 const bodyParser = require('body-parser');
 const app = express();
@@ -26,6 +28,8 @@ app.use(helmet.xssFilter());
 app.use(helmet.frameguard('deny'));
 /* 브라우저에서 파일 형식 추측 금지 */
 app.use(helmet.noSniff());
+/* 다른 도메인의 요청을 허용한다  */
+app.use(cors());
 
 /* 이미지, CSS 파일 및 JavaScript 파일과 같은 정적 파일을 제공하려면 Express의 기본 제공 미들웨어 함수인 express.static을 사용 */
 app.use(express.static('public'));
