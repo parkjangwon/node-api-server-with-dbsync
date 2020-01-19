@@ -8,13 +8,11 @@
   Express 서버 설정 파일
  */
 const express = require('express');
-
 const cors = require('cors');
-
-/* http 요청 body에 접근 가능하도록 bodyParser를 추가한다. */
 const bodyParser = require('body-parser');
 const app = express();
 
+/* http 요청 body에 접근 가능하도록 bodyParser를 추가한다. */
 app.use(bodyParser.json({ limit: '50mb' })); //body 의 크기 설정
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true })); //url의 크기 설정
 
