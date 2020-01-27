@@ -28,7 +28,6 @@ app.use(helmet.frameguard('deny'));
 app.use(helmet.noSniff());
 /* 다른 도메인의 요청을 허용한다  */
 app.use(cors());
-
 /* 이미지, CSS 파일 및 JavaScript 파일과 같은 정적 파일을 제공하려면 Express의 기본 제공 미들웨어 함수인 express.static을 사용 */
 app.use(express.static('public'));
 
@@ -39,7 +38,6 @@ users 라우팅 모듈 사용
 모든 리퀘스트 중 ~/users 으로 시작되는 요청은 2번째 파라미터로 오는 미들웨어가 담당한다.
  */
 app.use('/users', require('./api/users'));
-
 app.use('/todos', require('./api/todos'));
 
 module.exports = app;
